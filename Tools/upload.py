@@ -18,6 +18,7 @@ async def upload_video(c, m, send, media_location, thumb_image_path, duration, w
                 chat_id=m.chat.id,
                 video=media_location,
                 duration=duration,
+                caption=description,
                 width=width,
                 height=height,
                 supports_streaming=True,
@@ -34,6 +35,7 @@ async def upload_video(c, m, send, media_location, thumb_image_path, duration, w
          await c.send_document(
                 chat_id=m.chat.id,
                 document=media_location,
+                caption=description,
                 thumb=thumb_image_path,
                 reply_to_message_id=m.reply_to_message.message_id,
                 progress=progress_for_pyrogram,
